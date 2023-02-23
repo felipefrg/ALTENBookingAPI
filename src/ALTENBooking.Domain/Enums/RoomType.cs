@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ALTENBooking.Domain.Enums
 {
-    public enum Genre
+    public enum RoomType
     {
-        MALE,
-        FEMALE
+        SINGLE,
+        DOUBLE
     }
 }

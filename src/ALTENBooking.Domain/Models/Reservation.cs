@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ALTENBooking.Domain.Models
 {
-    public class Reservation
-    {
-        public Guid Id { get; set; }
+    public class Reservation : BaseEntity
+    {        
         public Guid RoomId { get; }
         public Guid CustomerId { get; set; }
         public DateTime StartDate { get; set; }
