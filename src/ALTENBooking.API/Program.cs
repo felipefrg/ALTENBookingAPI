@@ -1,3 +1,4 @@
+using ALTENBooking.Data;
 using ALTENBooking.Domain.Interfaces;
 
 namespace ALTENBooking.API
@@ -36,7 +37,7 @@ namespace ALTENBooking.API
         
         private void AddServicesDI(IServiceCollection services)
         {
-            services.AddScoped<IRepository<>,Repository>
+            services.AddScoped<IRepository<>, Repository>();
         }
     }
 }
