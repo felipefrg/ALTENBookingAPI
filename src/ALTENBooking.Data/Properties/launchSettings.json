@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ALTENBooking.Data": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
