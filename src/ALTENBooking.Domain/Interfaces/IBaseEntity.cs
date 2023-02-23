@@ -1,13 +1,12 @@
-﻿using ALTENBooking.Domain.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ALTENBooking.Domain.Models
+namespace ALTENBooking.Domain.Interfaces
 {
-    public class BaseEntity : IBaseEntity
+    public interface IBaseEntity
     {
         public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }

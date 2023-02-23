@@ -1,3 +1,5 @@
+using ALTENBooking.Domain.Interfaces;
+
 namespace ALTENBooking.API
 {
     public class Program
@@ -11,7 +13,7 @@ namespace ALTENBooking.API
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen();            
 
             var app = builder.Build();
 
@@ -20,7 +22,7 @@ namespace ALTENBooking.API
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-            }
+            }            
 
             app.UseHttpsRedirection();
 
@@ -30,6 +32,11 @@ namespace ALTENBooking.API
             app.MapControllers();
 
             app.Run();
+        }   
+        
+        private void AddServicesDI(IServiceCollection services)
+        {
+            services.AddScoped<IRepository<>,Repository>
         }
     }
 }
