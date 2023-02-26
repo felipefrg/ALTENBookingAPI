@@ -34,7 +34,7 @@ namespace ALTENBooking.Data
             _dbContext.SaveChanges();
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> filter = null)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null)
         {
             var entities = _entities.AsQueryable();
             if(filter != null)
@@ -51,6 +51,7 @@ namespace ALTENBooking.Data
 
         public void Update(T entity)
         {
+            entity.UpdatedAt = DateTime.Now;            
             _entities.Update(entity);
             _dbContext.SaveChanges();
         }

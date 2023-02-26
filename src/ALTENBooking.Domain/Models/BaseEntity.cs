@@ -9,9 +9,9 @@ namespace ALTENBooking.Domain.Models
 {
     public class BaseEntity : IBaseEntity
     {
-        public Guid Id { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? UpdatedAt { get; set; }
-        public bool Active { get; set; }
+        public bool Active { get; set; } = true;
     }
 }

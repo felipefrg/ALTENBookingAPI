@@ -13,6 +13,6 @@ namespace ALTENBooking.Domain.Interfaces
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
-        IQueryable<T> GetAll(Expression<Func<T,bool>> filter = null);
+        IEnumerable<T> GetAll(Expression<Func<T,bool>> filter = null);
     }
 }

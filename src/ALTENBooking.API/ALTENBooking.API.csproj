@@ -13,4 +13,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ALTENBooking.Data\ALTENBooking.Data.csproj" />
+    <ProjectReference Include="..\ALTENBooking.Domain\ALTENBooking.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
