@@ -1,0 +1,118 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ALTENBooking",
+    "dateExported": "2023-02-27T04:03:41.969Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ced2ecfb-0426-4d5d-a407-113c3e128bea",
+            "colId": "0567e139-d7f1-4c4a-b6dd-0b8765182c68",
+            "containerId": "",
+            "name": "Bookings",
+            "url": "/api/Booking",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-27T02:45:24.205Z",
+            "modified": "2023-02-27T02:46:58.850Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6ed21c56-a0f4-47b4-804c-fa94a8829b36",
+            "colId": "0567e139-d7f1-4c4a-b6dd-0b8765182c68",
+            "containerId": "",
+            "name": "CreateBooking",
+            "url": "/api/Booking",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-02-27T02:47:27.376Z",
+            "modified": "2023-02-27T03:54:54.096Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": " {   \r\n    \"customer\": {\r\n      \"firstName\": \"Felipe\",\r\n      \"lastName\": \"Goncalves\",\r\n       \"email\": \"felipe.goncalves@alten.com.ca\",\r\n      \"document\": \"002\",\r\n      \"dateOfBirth\": \"1990-11-15T17:52:56.494Z\"\r\n     \r\n    },\r\n   \r\n    \"startDate\": \"2023-03-09T00:00:00Z\",\r\n    \"endDate\": \"2023-03-10T23:59:59.999Z\"\r\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bde202e0-e0f1-4104-85fc-ba1c2e479148",
+            "colId": "0567e139-d7f1-4c4a-b6dd-0b8765182c68",
+            "containerId": "",
+            "name": "UpdateBooking",
+            "url": "/api/Booking",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-02-27T02:48:38.295Z",
+            "modified": "2023-02-27T02:49:14.741Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"id\": \"a0f53814-cce0-4b9f-8867-6f2ff6feb177\",\r\n  \"customerId\": \"2ac96c26-97f4-431d-8a57-c1efc64e50b0\",\r\n  \"roomId\": \"61f3e658-b377-4dc5-96b1-ad64ef2e03ae\",\r\n  \"startDate\": \"2023-03-20T02:42:35.952Z\",\r\n  \"endDate\": \"2023-03-21T02:42:35.952Z\"\r\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "70a7b21a-0dc6-4f4e-a84a-754c074f4135",
+            "colId": "0567e139-d7f1-4c4a-b6dd-0b8765182c68",
+            "containerId": "",
+            "name": "DeleteBookingByCustomerId",
+            "url": "/api/Booking?customerId=98c8306b-43e1-4f5d-afe8-1cf7c7fd33bf",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-02-27T02:49:42.943Z",
+            "modified": "2023-02-27T03:03:22.127Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "customerId",
+                    "value": "98c8306b-43e1-4f5d-afe8-1cf7c7fd33bf",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"customerId\": \"98c8306b-43e1-4f5d-afe8-1cf7c7fd33bf\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ce93bdc6-4c58-4c48-be8d-09fbbe4efa6d",
+            "colId": "0567e139-d7f1-4c4a-b6dd-0b8765182c68",
+            "containerId": "",
+            "name": "GetPeriodStatus",
+            "url": "/api/Booking/PeriodStatus?startDate=2023-03-09&endDate=2023-03-10",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-02-27T02:51:31.792Z",
+            "modified": "2023-02-27T03:00:53.942Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "startDate",
+                    "value": "2023-03-09",
+                    "isPath": false
+                },
+                {
+                    "name": "endDate",
+                    "value": "2023-03-10",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "headers": [],
+        "tests": [],
+        "options": {
+            "baseUrl": "https://localhost:7121"
+        }
+    }
+}
