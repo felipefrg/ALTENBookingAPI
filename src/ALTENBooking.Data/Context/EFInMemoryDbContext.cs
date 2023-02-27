@@ -11,17 +11,20 @@ namespace ALTENBooking.Data.Context
     public class EFInMemoryDbContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Room> Rooms { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public EFInMemoryDbContext(DbContextOptions<EFInMemoryDbContext> options) : base(options)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseInMemoryDatabase("alten.db");
-        }
+
+        }      
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Customer>().HasQueryFilter(p => p.Active);
-        }
+            modelBuilder.Entity<Reservation>().HasQueryFilter(p => p.Active);
+            modelBuilder.Entity<Room>().HasQueryFilter(p => p.Active);
+        }  
     }
 }

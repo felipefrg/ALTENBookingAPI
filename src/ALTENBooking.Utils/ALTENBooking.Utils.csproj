@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ALTENBooking.Domain\ALTENBooking.Domain.csproj" />
-    <ProjectReference Include="..\ALTENBooking.Utils\ALTENBooking.Utils.csproj" />
-  </ItemGroup>
-
 </Project>

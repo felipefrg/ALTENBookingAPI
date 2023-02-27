@@ -10,7 +10,7 @@ namespace ALTENBooking.Domain.Queries
 {
     public static class BookingQuery
     {
-        internal static Expression<Func<Reservation,bool>> RoomAvailability(DateTime startDate, DateTime endDate, Guid? roomId = null)
+        public static Expression<Func<Reservation,bool>> RoomAvailability(DateTime startDate, DateTime endDate, Guid? roomId = null)
         {
             return x => 
                      (roomId == null || x.RoomId == roomId.Value)
@@ -22,7 +22,7 @@ namespace ALTENBooking.Domain.Queries
                      && x.EndDate <= endDate;
         }
 
-        internal static Expression<Func<Reservation, bool>> CustomerAlreadyHasValidReservation(Guid customerId,Guid roomId,DateTime startDate)
+        public static Expression<Func<Reservation, bool>> CustomerAlreadyHasValidReservation(Guid customerId,Guid roomId,DateTime startDate)
         {
             return x => x.StartDate >= startDate
                      && x.CustomerId == customerId
@@ -33,6 +33,24 @@ namespace ALTENBooking.Domain.Queries
         public static Expression<Func<Reservation, bool>> GetReservationByCustomerId(Guid customerId)
         {
             return x => x.CustomerId == customerId;
-        }        
+        }
+
+        public static Expression<Func<Reservation, bool>> GetReservationById(Guid id)
+        {
+            return x => x.Id == id;
+        }
+
+        public static Expression<Func<Reservation, bool>> GetRoomByDate(DateTime startDate, DateTime endDate)
+        {
+            return x =>                    
+                     x.StartDate == startDate                     
+                     && x.EndDate == endDate;
+        }
+
+        public static Expression<Func<Room, bool>> GetRoomById(Guid Id)
+        {
+            return x => x.Id == Id;
+                     
+        }
     }
 }

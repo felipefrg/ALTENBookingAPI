@@ -1,6 +1,7 @@
 ﻿using ALTENBooking.Domain.Interfaces;
 using ALTENBooking.Domain.Models;
 using ALTENBooking.Domain.Queries;
+using ALTENBooking.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,17 @@ namespace ALTENBooking.Domain.Services
 {
     public class BookingService : IBookingService
     {
-        IRepository<Reservation> _reservationRepository;        
+        IRepository<Reservation> _reservationRepository;
+        IRepository<Room> _roomRepository;
         DateTime _currentDateTime;
 
-        public BookingService(IRepository<Reservation> reservationRepository                              
-                              ,ICurrentDateTime currentDateTime)
-        {
-            _reservationRepository = reservationRepository;            
+        public BookingService(IRepository<Reservation> reservationRepository
+                             , IRepository<Room> roomRepository
+                              , ICurrentDateTime currentDateTime)
+        {   
+            _reservationRepository = reservationRepository;
             _currentDateTime = currentDateTime.Value;
+            _roomRepository = roomRepository;
         }
         public Result CancelReservation(Guid customerId)
         {
@@ -34,6 +38,7 @@ namespace ALTENBooking.Domain.Services
                 return result;
             }            
             _reservationRepository.Delete(reservation);
+            result.Message = StringMessages.ReservationDeleteOK;
             return result;
         }
 
@@ -55,6 +60,7 @@ namespace ALTENBooking.Domain.Services
             _reservationRepository.Add(reservation);
 
             Result result = new Result();
+            result.Message = StringMessages.ReservationCreateOK;
 
             return result; 
         }
@@ -92,7 +98,14 @@ namespace ALTENBooking.Domain.Services
             reservation.RoomId = roomId;
 
             _reservationRepository.Update(reservation);
+            result.Message = StringMessages.ReservationModificateOK;
             return result;
+        }
+
+        public IList<Reservation> GetReservationByDate(DateTime startDate, DateTime endDate)
+        {
+            var rooms = _reservationRepository.GetAll(BookingQuery.GetRoomByDate(startDate, endDate)).ToList();
+            return rooms;
         }
 
         void CheckEndDateMinorThanStartDate(DateTime startDate)
@@ -140,12 +153,24 @@ namespace ALTENBooking.Domain.Services
 
         void CheckRoomIsAvailable(DateTime startDate, DateTime endDate, Guid roomId)
         {
+            var room = _roomRepository
+               .GetAll(BookingQuery.GetRoomById(roomId))
+               .FirstOrDefault();
+
+            if(room == null)
+                throw new BookingException(StringMessages.RoomNotExists);
+
             var reservation = _reservationRepository
                .GetAll(BookingQuery.RoomAvailability(startDate, endDate, roomId))
                .FirstOrDefault();
 
             if (reservation != null)
                 throw new BookingException(StringMessages.ReservationRoomUnavailable);
+        }        
+
+        public IList<Reservation> GetAllReservation()
+        {
+            return _reservationRepository.GetAll().ToList();
         }
     }
 }

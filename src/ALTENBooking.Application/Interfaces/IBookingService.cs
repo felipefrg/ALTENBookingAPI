@@ -11,10 +11,12 @@ namespace ALTENBooking.Application.Interfaces
     {
         bool IsRoomAvailable(DateTime startDate, DateTime endDate);
 
-        ResultDTO DoReservation(Guid CustomerId, Guid RoomId, DateTime startDate, DateTime endDate);
+        ResultDTO DoReservation(BookingDTO createBooking);
 
-        ResultDTO CancelReservation(Guid CustomerId, Guid RoomId, DateTime startDate, DateTime endDate);
+        ResultDTO CancelReservation(Guid customerId);
 
-        ResultDTO ModifyReservation(Guid CustomerId, Guid RoomId, DateTime startDate, DateTime endDate);
+        ResultDTO ModifyReservation(BookingUpdateDTO createBooking);
+
+        IList<BookingDTO> GetReservation();
     }
 }

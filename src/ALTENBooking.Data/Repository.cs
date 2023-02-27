@@ -23,7 +23,7 @@ namespace ALTENBooking.Data
 
         public void Add(T entity)
         {
-            _entities.AddAsync(entity);
+            _entities.Add(entity);
             _dbContext.SaveChanges();
         }
 

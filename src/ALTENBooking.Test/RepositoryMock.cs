@@ -19,7 +19,10 @@ namespace ALTENBooking.Test
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null)
         {
-            return reservationList.Where(filter.Compile());
+            if (filter != null)
+                return reservationList.Where(filter.Compile());
+            else
+                return reservationList;
         }
 
         public T? GetById(Guid id)

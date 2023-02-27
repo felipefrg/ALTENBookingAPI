@@ -4,6 +4,7 @@ using ALTENBooking.Test.Theory;
 using ALTENBooking.Domain;
 using ALTENBooking.Domain.Enums;
 using ALTENBooking.Domain.Queries;
+using ALTENBooking.Utils;
 
 namespace ALTENBooking.Test.Domain
 { 
@@ -122,7 +123,7 @@ namespace ALTENBooking.Test.Domain
         }
 
         [Fact]
-        public void GivenBookingRoom_WhenUserAlreadyHaValidReservation_ThenReturnBookingError()
+        public void GivenBookingRoom_WhenUserAlreadyValidReservation_ThenReturnBookingError()
         {
             //arrange
             var startDate = new DateTime(2023, 03, 4);
@@ -280,7 +281,8 @@ namespace ALTENBooking.Test.Domain
                 = new CurrentDateTimeMock(new DateTime(2023, 02, 23, 6, 30, 30));
             
             return
-                new BookingService(_reservationRepositoryMock                
+                new BookingService(_reservationRepositoryMock 
+                , _roomRepositoryMock
                 , currentDateTime);
         }
         void SetupReservation()
@@ -314,7 +316,7 @@ namespace ALTENBooking.Test.Domain
             {
                 Id = _customerId
                 ,
-                DateOfBirth = new DateOnly(1990, 01, 01)
+                DateOfBirth = new DateTime(1990, 01, 01)
                 ,
                 Document = "00-0001"
                 ,
@@ -322,9 +324,7 @@ namespace ALTENBooking.Test.Domain
                 ,
                 FirstName = "Felipe"
                 ,
-                LastName = "Gonçalves"
-                ,
-                Genre = Genre.MALE
+                LastName = "Gonçalves"                
             };
 
             _customerRepositoryMock = new RepositoryMock<Customer>();

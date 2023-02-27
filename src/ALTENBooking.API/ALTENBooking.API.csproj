@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ALTENBooking.Application\ALTENBooking.Application.csproj" />
     <ProjectReference Include="..\ALTENBooking.Data\ALTENBooking.Data.csproj" />
     <ProjectReference Include="..\ALTENBooking.Domain\ALTENBooking.Domain.csproj" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using ALTENBooking.Domain.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,8 @@ namespace ALTENBooking.Domain.Interfaces
         Result CancelReservation(Guid CustomerId);
 
         Result ModifyReservation(Guid ReservationId, Guid CustomerId, Guid RoomId, DateTime startDate, DateTime endDate);
+
+        IList<Reservation> GetReservationByDate(DateTime startDate, DateTime endDate);
+        IList<Reservation> GetAllReservation();
     }
 }

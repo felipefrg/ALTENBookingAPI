@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALTENBooking.API", "ALTENBo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALTENBooking.Test", "ALTENBooking.Test\ALTENBooking.Test.csproj", "{92C186CC-AA51-4D22-9A45-D57B70E3FA12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALTENBooking.Application", "ALTENBooking.Application\ALTENBooking.Application.csproj", "{792A3D24-1452-4537-AB73-55D1A344449D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALTENBooking.Application", "ALTENBooking.Application\ALTENBooking.Application.csproj", "{792A3D24-1452-4537-AB73-55D1A344449D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALTENBooking.Domain", "ALTENBooking.Domain\ALTENBooking.Domain.csproj", "{0767D3A5-B90E-41C5-8A9D-E5916552DEE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALTENBooking.Domain", "ALTENBooking.Domain\ALTENBooking.Domain.csproj", "{0767D3A5-B90E-41C5-8A9D-E5916552DEE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALTENBooking.Data", "ALTENBooking.Data\ALTENBooking.Data.csproj", "{2F7E16EF-B5B4-4A96-A8DF-BA39596DB08F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALTENBooking.Data", "ALTENBooking.Data\ALTENBooking.Data.csproj", "{2F7E16EF-B5B4-4A96-A8DF-BA39596DB08F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALTENBooking.Utils", "ALTENBooking.Utils\ALTENBooking.Utils.csproj", "{066AAF41-A3EE-46E8-99A6-9353FA76D629}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2F7E16EF-B5B4-4A96-A8DF-BA39596DB08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F7E16EF-B5B4-4A96-A8DF-BA39596DB08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F7E16EF-B5B4-4A96-A8DF-BA39596DB08F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066AAF41-A3EE-46E8-99A6-9353FA76D629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066AAF41-A3EE-46E8-99A6-9353FA76D629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066AAF41-A3EE-46E8-99A6-9353FA76D629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066AAF41-A3EE-46E8-99A6-9353FA76D629}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
