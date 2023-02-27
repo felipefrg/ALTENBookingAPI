@@ -93,7 +93,7 @@ namespace ALTENBooking.Application.Services
                     return result;
                 }
 
-                if (!(updateBooking.CustomerId == Guid.Empty))
+                if (updateBooking.CustomerId == Guid.Empty)
                 {
                     result.HasError = true;
                     result.Message = StringMessages.CustomerIdNotNull;
