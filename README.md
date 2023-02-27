@@ -24,6 +24,7 @@ It is also using a TDD (Test Driven Development) approach to ensure that all dom
 ![Domain Tests](https://github.com/felipefrg/ALTENBookingAPI/blob/main/doc/TestResults.png?raw=true)
 
 ## Get Bookings
+Get all bookings
 ![Get](https://github.com/felipefrg/ALTENBookingAPI/blob/main/doc/GetBookings.png?raw=true)
 
 
