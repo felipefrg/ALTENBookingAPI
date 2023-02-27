@@ -18,6 +18,8 @@ Project/
 │
 ├── ALTENBooking.Tests/ 
 
+![Project Structure](https://github.com/felipefrg/ALTENBookingAPI/blob/main/doc/structure.png?raw=true)
+
 ## Tests
 
 It is also using a TDD (Test Driven Development) approach to ensure that all domain logical rules meet the requirements.
